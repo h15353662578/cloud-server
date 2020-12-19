@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: service-email-8100
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    base-packages: city.alibert
+  protocol:
+    name: dubbo
+    port: -1
+  cloud:
+    #订阅服务方应用列表
+    subscribed-services: cloud-consumer
+  registry:
+    address: spring-cloud://localhost
